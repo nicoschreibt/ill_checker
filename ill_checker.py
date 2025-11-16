@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from config import SENDER_EMAIL, SENDER_PASSWORD, RECEIVER_EMAIL
 
 # Website URL
 url = "https://wg-ill.ch/de/angebot"
@@ -23,11 +24,6 @@ def send_email(gefundene_wohnungen, wohnung_frei):
     """
     Sendet eine Email, wenn Wohnungen verfügbar sind.
     """
-    # Email-Konfiguration
-    sender_email = "nicolas.saameli@gmail.com"  # Ersetze mit deiner Email
-    sender_password = "xxcm njqo fvfd ixjs"  # Ersetze mit App-Passwort
-    receiver_email = "nicolas.saameli@protonmail.com"
-    
     # Email-Inhalt erstellen
     subject = "🏠 Wohnungen verfügbar bei WG-ill!"
     
